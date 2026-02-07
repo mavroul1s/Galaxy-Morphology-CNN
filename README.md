@@ -19,7 +19,7 @@ Unlike "black box" solutions, this repository implements a rigorous 5-phase expe
 ## 📊 Key Results
 | Metric | Value | Description |
 | :--- | :--- | :--- |
-| **Validation RMSE** | **0.106** | Internal evaluation on 20% holdout set. |
+| **Validation RMSE** | **0.104** | Internal evaluation on 20% holdout set. |
 | **Test RMSE** | **0.109** | External evaluation on Kaggle blind test set. |
 | **Inference Speed** | **57ms** | Average time to process a single image (Real-time). |
 | **Throughput** | **720 img/s** | Max processing speed during batch training. |
