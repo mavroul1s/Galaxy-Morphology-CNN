@@ -9,9 +9,9 @@
 ---
 
 ## 📌 Project Overview
-The morphological classification of galaxies is a fundamental task in observational cosmology, providing insights into the formation and evolution of the universe. This project automates this process using a custom-designed **Convolutional Neural Network (CNN)** trained on the **Galaxy Zoo** dataset.
+The morphological classification of galaxies is a fundamental task in observational cosmology. This project automates the process using a custom-designed **Convolutional Neural Network (CNN)** trained on the **Galaxy Zoo** dataset.
 
-Unlike traditional "black box" solutions, this repository implements a transparent, rigorous **5-phase experimental pipeline** designed to isolate and optimize architectural decisions, achieving high precision with low computational overhead.
+Unlike "black box" solutions, this repository implements a transparent, rigorous **5-phase experimental pipeline** designed to isolate and optimize architectural decisions.
 
 ### 🎯 Key Objectives
 * **Precision:** Predict 37 probabilistic morphological features (e.g., "Smooth", "Spiral", "Bar") with an RMSE < 0.11.
@@ -20,18 +20,19 @@ Unlike traditional "black box" solutions, this repository implements a transpare
 
 ---
 
-## 📂 Repository Structure
+## 📂 Repository Organization
+The project is structured into three modular directories for clarity:
 
 ```text
 ├── 📂 assets/               # Visualizations, plots, and architecture diagrams
-│   ├── architecture_diagram.jpg
-│   ├── mse_rmse.png
-│   ├── learned_filters.png
-│   └── all_37_classes_labeled.png
+│   ├── architecture_diagram.jpg  # Schematic of the Custom VGG network
+│   ├── mse_rmse.png              # Training loss and accuracy curves
+│   ├── learned_filters.png       # Visualization of Layer 1 weights
+│   └── all_37_classes_labeled.png # Ground truth galaxy examples
 │
-├── 📂 doc/                  # Formal documentation and scientific reports
+├── 📂 doc/                  # Formal documentation
 │   └── final_report.pdf     # IEEE-formatted scientific paper detailing the methodology
 │
 └── 📂 src/                  # Source code and implementation
     ├── main.ipynb           # Complete Jupyter Notebook (Data pipeline, Training, Evaluation)
-    └── galaxy_zoo_submission.csv  # Final probability predictions
+    └── galaxy_zoo_submission.csv  # Final probability predictions for Kaggle
