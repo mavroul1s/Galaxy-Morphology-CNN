@@ -72,6 +72,7 @@ To verify that the model is learning meaningful physics rather than memorizing n
 *Figure 4: Visualization of the 32 learned kernels ($3 \times 3$) in the first layer. The emergence of **Edge Detectors** (vertical/horizontal gradients) and **Center-Surround Detectors** (blobs) confirms successful feature extraction.*
 
 ---
+---
 
 ## 🚀 Getting Started
 
