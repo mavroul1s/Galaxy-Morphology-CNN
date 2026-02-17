@@ -21,21 +21,15 @@ Unlike "black box" solutions, this repository implements a transparent, rigorous
 ---
 
 ## 📂 Repository Organization
-Click on the files below to view the source code, reports, and data.
+The project is organized into three modular directories:
 
-* **📂 doc/** (Documentation)
-  * 📄 **[final_report.pdf](doc/final_report.pdf)** – The official IEEE-formatted scientific paper detailing the methodology, architecture, and results.
-
-* **📂 src/** (Source Code & Models)
-  * 📓 **[main.ipynb](src/main.ipynb)** – The complete, modular Jupyter Notebook containing the Data Pipeline, Training Loop, and Evaluation scripts.
-  * 💾 **[my_galaxy_model_backup.keras](src/my_galaxy_model_backup.keras)** – The pre-trained model weights (Save file).
-  * 📊 **[galaxy_zoo_submission.csv](src/galaxy_zoo_submission.csv)** – The final probability predictions generated for the Kaggle competition.
-
-* **📂 assets/** (Visualizations)
-  * 🖼️ [architecture_diagram.jpg](assets/architecture_diagram.jpg) – Schematic of the Custom VGG network.
-  * 📈 [mse_rmse.png](assets/mse_rmse.png) – Training loss and accuracy curves.
-  * 🧠 [learned_filters.png](assets/learned_filters.png) – Visualization of Layer 1 weights.
-  * 🌌 [all_37_classes_labeled.png](assets/all_37_classes_labeled.png) – Ground truth galaxy examples.
+* **`doc/`** - Documentation and Reports
+  * 📄 [final_report.pdf](doc/final_report.pdf) - IEEE-formatted scientific paper.
+* **`src/`** - Source Code & Models
+  * 📓 [main.ipynb](src/main.ipynb) - Jupyter Notebook with the full training pipeline.
+  * 💾 [my_galaxy_model_backup.keras](src/my_galaxy_model_backup.keras) - Pre-trained model weights.
+  * 📊 [galaxy_zoo_submission.csv](src/galaxy_zoo_submission.csv) - Final Kaggle predictions.
+* **`assets/`** - Images and Visualizations (See below).
 
 ---
 
@@ -116,7 +110,7 @@ To verify that the model is learning meaningful physics rather than memorizing n
 ---
 
 ## 📄 Citation
-If you use this code or methodology in your research, please refer to the full scientific report located in the `doc/` folder:
+If you use this code or methodology in your research, please refer to the full scientific report:
 
 > **Automated Morphological Classification of Galaxies using Deep Convolutional Architecture**
 > *N. Mavros, K. Fotinaki (2026).*
