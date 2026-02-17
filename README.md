@@ -14,10 +14,9 @@ The morphological classification of galaxies is a fundamental task in observatio
 Unlike "black box" solutions, this repository implements a transparent, rigorous **5-phase experimental pipeline** designed to isolate and optimize architectural decisions.
 
 ### 🎯 Key Objectives
-* **Precision:** Predict 37 probabilistic morphological features (e.g., "Smooth", "Spiral", "Bar") with an RMSE < 0.11.
-* **Efficiency:** Design a lightweight architecture ($\approx 2.6$M parameters) capable of real-time inference.
+* **Precision:** Predict 37 probabilistic morphological features (e.g., "Smooth", "Spiral", "Bar") with an RMSE of **less than 0.1**.
+* **Efficiency:** Design a lightweight architecture (**approx. 2.6M** parameters) capable of real-time inference.
 * **Interpretability:** Visualize internal feature maps to ensure the model learns physical geometric primitives.
-
 ---
 
 ## 📂 Repository Organization
