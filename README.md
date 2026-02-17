@@ -105,7 +105,7 @@ To verify that the model is learning meaningful physics rather than memorizing n
 If you use this code or methodology in your research, please refer to the full scientific report:
 
 > **Automated Morphological Classification of Galaxies using Deep Convolutional Architecture**
-> *N. Mavros, K. Fotinaki (2026).*
+> *N. Mavros (2026).*
 > [Read the full paper (PDF)](doc/final_report.pdf)
 
 ---
