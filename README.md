@@ -29,7 +29,7 @@ The project is organized into three modular directories:
   * 📓 [main.ipynb](src/main.ipynb) - Jupyter Notebook with the full training pipeline.
   * 💾 [my_galaxy_model_backup.keras](src/my_galaxy_model_backup.keras) - Pre-trained model weights.
   * 📊 [galaxy_zoo_submission.csv](src/galaxy_zoo_submission.csv) - Final Kaggle predictions.
-* **`assets/`** - Images and Visualizations (See below).
+* **`assets/`** - Images and Visualizations (Displayed below).
 
 ---
 
