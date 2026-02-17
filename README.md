@@ -69,7 +69,7 @@ The model demonstrates stable convergence with no significant overfitting.
 To verify that the model is learning meaningful physics rather than memorizing noise, we visualized the weights of the first convolutional layer.
 
 ![Learned Filters](assets/filters.png)
-*Figure 4: Visualization of the 32 learned kernels ($3\times\3$) in the first layer. The emergence of **Edge Detectors** (vertical/horizontal gradients) and **Center-Surround Detectors** (blobs) confirms successful feature extraction.*
+*Figure 4: Visualization of the 32 learned kernels ($3 \times 3$) in the first layer. The emergence of **Edge Detectors** (vertical/horizontal gradients) and **Center-Surround Detectors** (blobs) confirms successful feature extraction.*
 
 ---
 
