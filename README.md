@@ -52,7 +52,7 @@ Our model was evaluated on a blind test set of 79,975 unlabelled galaxies via th
 
 | Metric | Value | Context |
 | :--- | :--- | :--- |
-| **Validation RMSE** | **0.106** | Internal evaluation on 20% holdout set. |
+| **Validation RMSE** | **0.104** | Internal evaluation on 20% holdout set. |
 | **Test RMSE** | **0.109** | **External blind evaluation.** |
 | **Inference Latency** | **57.29 ms** | Average time to process a single image. |
 | **Throughput** | **17.5 Hz** | Real-time processing speed (Single-shot mode). |
