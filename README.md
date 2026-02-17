@@ -65,12 +65,6 @@ The model demonstrates stable convergence with no significant overfitting.
 ![Training Curves](assets/mse_rmse.png)
 *Figure 2: Training dynamics showing the convergence of Mean Squared Error (Loss) and RMSE over 25 epochs.*
 
-### 3. Morphological Predictions (Ground Truth)
-The model successfully identifies fine-grained features, distinguishing between subtle classes like "Edge-on" disks and "Spiral" arms.
-
-![Galaxy Classes](galaxies.png)
-*Figure 3: Representative samples from the dataset showing the Ground Truth for various morphological classes.*
-
 ---
 
 ## 🔬 Interpretability
