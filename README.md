@@ -27,8 +27,6 @@ The project is organized into three modular directories:
   * 📄 [final_report.pdf](doc/final_report.pdf) - IEEE-formatted scientific paper.
 * **`src/`** - Source Code & Models
   * 📓 [main.ipynb](src/main.ipynb) - Jupyter Notebook with the full training pipeline.
-  * 💾 [my_galaxy_model_backup.keras](src/my_galaxy_model_backup.keras) - Pre-trained model weights.
-  * 📊 [galaxy_zoo_submission.csv](src/galaxy_zoo_submission.csv) - Final Kaggle predictions.
 * **`assets/`** - Images and Visualizations (Displayed below).
 
 ---
