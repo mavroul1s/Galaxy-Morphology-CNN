@@ -36,7 +36,7 @@ The project is organized into three modular directories:
 ## 🧠 Model Architecture
 We implemented a **Custom VGG-style CNN** optimized for $64 \times 64$ pixel input resolution. The network avoids the computational bloat of standard pre-trained models by stacking small $3 \times 3$ filters in a modular design.
 
-![Architecture Diagram](assets/architecture_diagram.jpg)
+![Architecture Diagram](assets/architecture_diagram.png)
 *Figure 1: Schematic of the Custom VGG Architecture. Note: The final deployed model utilizes an optimized Dropout rate of 0.2 based on sensitivity analysis results.*
 
 **Technical Specifications:**
@@ -68,7 +68,7 @@ The model demonstrates stable convergence with no significant overfitting.
 ### 3. Morphological Predictions (Ground Truth)
 The model successfully identifies fine-grained features, distinguishing between subtle classes like "Edge-on" disks and "Spiral" arms.
 
-![Galaxy Classes](assets/all_37_classes_labeled.png)
+![Galaxy Classes](galaxies.png)
 *Figure 3: Representative samples from the dataset showing the Ground Truth for various morphological classes.*
 
 ---
