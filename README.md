@@ -20,12 +20,15 @@ Unlike "black box" solutions, this repository implements a transparent, rigorous
 ---
 
 ## 📂 Repository Organization
-The project is organized into three modular directories:
+The project is organized into four modular directories:
 
 * **`doc/`** - Documentation and Reports
-  * 📄 [final_report.pdf](doc/final_report.pdf) - IEEE-formatted scientific paper.
-* **`src/`** - Source Code & Models
-  * 📓 [main.ipynb](src/main.ipynb) - Jupyter Notebook with the full training pipeline.
+  * 📄 [neuro_fuzzy_final.pdf](doc/neuro_fuzzy_final.pdf) - IEEE-formatted scientific paper.
+* **`src/`** - Source Code
+  * 📓 [main.ipynb](src/main.ipynb) - Jupyter Notebook with the full training pipeline (executed, with outputs).
+* **`models/`** - Trained Weights & Predictions
+  * 🧠 [my_galaxy_model_backup.keras](models/my_galaxy_model_backup.keras) - Trained model (~31 MB), ready for inference.
+  * 📈 [galaxy_zoo_submission.csv](models/galaxy_zoo_submission.csv) - Predictions for the 79,975 blind test galaxies (Kaggle submission format).
 * **`assets/`** - Images and Visualizations (Displayed below).
 
 ---
@@ -62,19 +65,38 @@ The model demonstrates stable convergence with no significant overfitting.
 ![Training Curves](assets/mse_rmse.png)
 *Figure 2: Training dynamics showing the convergence of Mean Squared Error (Loss) and RMSE over 25 epochs.*
 
+### 3. Sensitivity Analysis: Learning Rate & Batch Size
+A grid over learning rates ($10^{-4}$, $10^{-3}$, $10^{-2}$) and batch sizes (32, 64) identified $\alpha = 10^{-3}$ as the optimum. An aggressive $10^{-2}$ rate destabilises training, roughly doubling the error.
+
+![Learning Rate vs Batch Size](assets/lr_batch_plot.png)
+*Figure 3: Validation RMSE after 3 epochs as a function of learning rate (log scale) for batch sizes 32 and 64.*
+
+### 4. Sensitivity Analysis: Dropout Rate
+Aggressive regularization proved counter-productive for this architecture: a rate of $0.8$ starves the network of capacity, while $0.2$ converges fastest and lowest.
+
+![Dropout Sensitivity](assets/dropout_sensitivity.png)
+*Figure 4: Validation RMSE per epoch for Dropout rates of 0.2, 0.5 and 0.8. The 0.2 configuration was selected for the final model.*
+
+### 5. Scalability
+Training cost grows approximately **linearly** with dataset size, confirming that the pipeline is not bottlenecked by memory or I/O.
+
+![Scalability](assets/scalability.png)
+*Figure 5: Training time per epoch versus number of input images (~27 s at 12k images to ~85 s at 61k images).*
+
 ---
 
 ## 🔬 Interpretability
 To verify that the model is learning meaningful physics rather than memorizing noise, we visualized the weights of the first convolutional layer.
 
 ![Learned Filters](assets/filters.png)
-*Figure 4: Visualization of the 32 learned kernels (3x3) in the first layer. The emergence of **Edge Detectors** (vertical/horizontal gradients) and **Center-Surround Detectors** (blobs) confirms successful feature extraction.*
+*Figure 6: Visualization of the 32 learned kernels (3x3) in the first layer. The emergence of **Edge Detectors** (vertical/horizontal gradients) and **Center-Surround Detectors** (blobs) confirms successful feature extraction.*
 
----
+### The 37-Class Decision Tree
+Each galaxy is described by 37 probabilistic answers following the Galaxy Zoo decision tree. Below is a representative ground-truth example for every class.
 
-## 🚀 Getting Started
+![Representative Samples](assets/galaxies.png)
+*Figure 7: Representative samples for all 37 Galaxy Zoo classes, annotated with the class label and its ground-truth probability. An unlabelled version of this grid is available in [assets/samples.png](assets/samples.png).*
 
----
 ---
 
 ## 🚀 Getting Started
@@ -87,7 +109,7 @@ To verify that the model is learning meaningful physics rather than memorizing n
 ### Installation
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/Galaxy-Morphology-CNN.git](https://github.com/YOUR_USERNAME/Galaxy-Morphology-CNN.git)
+    git clone https://github.com/mavroul1s/Galaxy-Morphology-CNN.git
     cd Galaxy-Morphology-CNN
     ```
 
@@ -102,6 +124,17 @@ To verify that the model is learning meaningful physics rather than memorizing n
     cd src
     jupyter notebook main.ipynb
     ```
+    The notebook downloads the [Galaxy Zoo - The Galaxy Challenge](https://www.kaggle.com/c/galaxy-zoo-the-galaxy-challenge) data via the Kaggle API, so you will need your own `kaggle.json` API token. The raw images are **not** stored in this repository.
+
+### Using the Pre-trained Model
+Skip training entirely and load the weights shipped in `models/`:
+
+```python
+from tensorflow import keras
+
+model = keras.models.load_model("models/my_galaxy_model_backup.keras")
+predictions = model.predict(images)   # images: (N, 64, 64, 3), scaled to [0, 1]
+```
 
 ---
 
@@ -110,7 +143,12 @@ If you use this code or methodology in your research, please refer to the full s
 
 > **Automated Morphological Classification of Galaxies using Deep Convolutional Architecture**
 > *N. Mavros (2026).*
-> [Read the full paper (PDF)](doc/final_report.pdf)
+> [Read the full paper (PDF)](doc/neuro_fuzzy_final.pdf)
+
+---
+
+## 📜 License
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 *University of Thessaly - Department of Electrical & Computer Engineering*

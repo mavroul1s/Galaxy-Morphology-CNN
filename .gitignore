@@ -1,0 +1,31 @@
+# --- Credentials (never commit these) ---
+kaggle.json
+.kaggle/
+*.pem
+*.key
+
+# --- Python / Jupyter ---
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# --- Local raw data (too large for git; download from Kaggle) ---
+images_training_rev1/
+images_test_rev1/
+training_solutions_rev1.csv
+*.zip
+
+# --- Editor / tooling state ---
+.claude/
+.vscode/
+.idea/
+
+# --- OS junk ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# NOTE: models/ is intentionally tracked (trained weights + Kaggle submission).
